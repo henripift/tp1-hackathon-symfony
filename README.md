@@ -15,13 +15,13 @@ composer require --dev orm-fixtures
 **2. Création de la base et de l'utilisateur (MySQL, en root)**
 ```sql
 CREATE DATABASE hackathon CHARACTER SET utf8mb4;
-CREATE USER 'user_hack'@'localhost' IDENTIFIED BY 'hack2026';
-GRANT ALL PRIVILEGES ON hackathon.* TO 'user_hack'@'localhost';
+CREATE USER '[UTILISATEUR]'@'localhost' IDENTIFIED BY '[MDP]';
+GRANT ALL PRIVILEGES ON hackathon.* TO '[UTILISATEUR]'@'localhost';
 FLUSH PRIVILEGES;
 ```
 Puis dans `.env` :
 ```env
-DATABASE_URL="mysql://user_hack:hack2026@127.0.0.1:3306/hackathon?serverVersion=8.4.0&charset=utf8mb4"
+DATABASE_URL="mysql://[UTILISATEUR]:[MDP]@127.0.0.1:3306/hackathon?serverVersion=8.4.0&charset=utf8mb4"
 ```
 
 **3. Entités, tables et données de test**
